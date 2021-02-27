@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Repo" representedClassName="Repo" syncable="YES">
+        <attribute name="forksCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ownerID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ownerName" optional="YES" attributeType="String"/>
+        <attribute name="repositoryName" optional="YES" attributeType="String"/>
+        <attribute name="repoURL" optional="YES" attributeType="String"/>
+        <attribute name="starsCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="repos" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="accountName" attributeType="String"/>
+        <attribute name="avatarURL" optional="YES" attributeType="String"/>
+        <attribute name="bio" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="followersCount" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="followingCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="reposCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userName" attributeType="String"/>
+        <relationship name="repos" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Repo" inverseName="user" inverseEntity="Repo"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="209"/>
+        <element name="Repo" positionX="-45" positionY="81" width="128" height="134"/>
+    </elements>
+</model>

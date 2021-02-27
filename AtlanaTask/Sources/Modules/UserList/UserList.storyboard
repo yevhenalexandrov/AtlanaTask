@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User List View Controller-->
+        <scene sceneID="LyQ-V5-KD9">
+            <objects>
+                <viewController storyboardIdentifier="UserListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8bJ-IC-5oE" customClass="UserListViewController" customModule="AtlanaTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ebm-gO-g0Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVO-p3-FEf">
+                                <rect key="frame" x="0.0" y="54" width="414" height="55"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for Users" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pbY-Tu-1AR" customClass="PaddedTextField" customModule="AtlanaTask" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="0.0" width="384" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" systemColor="systemGray4Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn0-sy-rzW">
+                                        <rect key="frame" x="0.0" y="54" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="fXD-ql-mGm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cn0-sy-rzW" firstAttribute="leading" secondItem="WVO-p3-FEf" secondAttribute="leading" id="7fI-Es-zBl"/>
+                                    <constraint firstItem="pbY-Tu-1AR" firstAttribute="top" secondItem="WVO-p3-FEf" secondAttribute="top" id="EMU-P2-sqM"/>
+                                    <constraint firstItem="cn0-sy-rzW" firstAttribute="top" secondItem="pbY-Tu-1AR" secondAttribute="bottom" constant="13" id="IfK-ra-rJi"/>
+                                    <constraint firstAttribute="bottom" secondItem="cn0-sy-rzW" secondAttribute="bottom" id="RWd-Yz-xp9"/>
+                                    <constraint firstAttribute="height" constant="55" id="fxo-im-0kM"/>
+                                    <constraint firstItem="pbY-Tu-1AR" firstAttribute="leading" secondItem="WVO-p3-FEf" secondAttribute="leading" constant="15" id="ia6-I7-tLM"/>
+                                    <constraint firstAttribute="trailing" secondItem="pbY-Tu-1AR" secondAttribute="trailing" constant="15" id="kUo-Sn-1YL"/>
+                                    <constraint firstAttribute="trailing" secondItem="cn0-sy-rzW" secondAttribute="trailing" id="lbK-m0-8ED"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mj1-nK-ISW">
+                                <rect key="frame" x="0.0" y="109" width="414" height="753"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gov-14-AdN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gov-14-AdN" firstAttribute="trailing" secondItem="mj1-nK-ISW" secondAttribute="trailing" id="1cl-c8-nek"/>
+                            <constraint firstItem="WVO-p3-FEf" firstAttribute="top" secondItem="gov-14-AdN" secondAttribute="top" constant="10" id="Ima-bA-VSy"/>
+                            <constraint firstItem="gov-14-AdN" firstAttribute="bottom" secondItem="mj1-nK-ISW" secondAttribute="bottom" id="O00-xl-gkR"/>
+                            <constraint firstItem="mj1-nK-ISW" firstAttribute="leading" secondItem="gov-14-AdN" secondAttribute="leading" id="WMO-7J-KrG"/>
+                            <constraint firstItem="gov-14-AdN" firstAttribute="trailing" secondItem="WVO-p3-FEf" secondAttribute="trailing" id="Wic-V2-9U6"/>
+                            <constraint firstItem="mj1-nK-ISW" firstAttribute="top" secondItem="WVO-p3-FEf" secondAttribute="bottom" id="ln0-Ph-ACB"/>
+                            <constraint firstItem="WVO-p3-FEf" firstAttribute="leading" secondItem="gov-14-AdN" secondAttribute="leading" id="m5r-xG-Dpc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBarContainerView" destination="WVO-p3-FEf" id="sS0-gJ-VFC"/>
+                        <outlet property="searchResultsContainer" destination="mj1-nK-ISW" id="J07-hS-8sl"/>
+                        <outlet property="searchTextField" destination="pbY-Tu-1AR" id="rov-Hv-VHM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxg-Ji-Aww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273.91304347826087" y="-144.64285714285714"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="pbY-Tu-1AR">
+            <size key="intrinsicContentSize" width="121" height="21"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
