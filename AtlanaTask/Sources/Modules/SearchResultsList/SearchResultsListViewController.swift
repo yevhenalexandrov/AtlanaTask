@@ -54,6 +54,7 @@ class SearchResultsListViewController: UIViewController, Instantiatable, Keyboar
         super.viewDidLoad()
         setupViews()
         setupTableView()
+        viewIsReady()
         registerForKeyboardEvents()
     }
     
@@ -61,6 +62,10 @@ class SearchResultsListViewController: UIViewController, Instantiatable, Keyboar
     
     private func setupViews() {
         setBackBarButtonName("")
+    }
+    
+    private func viewIsReady() {
+        checkForEmptyState()
     }
     
     private func setupTableView() {
@@ -141,6 +146,7 @@ extension SearchResultsListViewController: UITableViewDelegate {
         return 0.1
     }
 }
+
 
 // MARK: - KeyboardControllable
 
